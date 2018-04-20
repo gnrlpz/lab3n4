@@ -15,7 +15,6 @@ class BaseClass(models.Model):
 class Profile(BaseClass):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     shipping_address = models.TextField
-    product_cart = models.ForeignKey('Cart', on_delete=models.CASCADE)
 
 # This hooks functions to User.save and User.create, so that profile is also updated
 @receiver(post_save, sender=User)
